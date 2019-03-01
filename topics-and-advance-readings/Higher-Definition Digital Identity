@@ -42,9 +42,9 @@ Think of this as increasing the spectrum of colours available for each ‘pixel�
 A Merkle tree-like map can be generated to hold the state of an identity graph in an abstraction layer. This provides a verifiable data structure that transparently stores arbitrary key:value pairs derived from the hash of the contents of verifiable claims. 
 The key’s hash designates a particular leaf of a Merkle tree. 
 The graph is read by using the hash address of the claim, to return the claim content. 
-This can be can be implemented using a  hash table, IPFS or [Trillian](https://github.com/google/trillian) . Content would be served from a personal data storage layer, such as an Identity Container.
+This can be can be implemented using a hash table, IPFS or [Trillian](https://github.com/google/trillian). Content would be served from a personal data storage layer, such as an Identity Container.
 
-Taking this further, we could use deep Merkle Trees to summarise the state of an underlying graph. This could allow scalability to extremely large trees. In this option, the map is parsed to represent filled and unfilled leaves. As filled leaves are vastly outnumbered by unfilled leaves, this produces *sparse* Merkle trees.  This highly efficient and light data model provides an efficient mechanism to append or revoke claims and to audit a graph. (The trade-off is that we get an  unordered map with loss of information, for instance about the relationships between claims).
+Taking this further, we could use deep Merkle Trees to summarise the state of an underlying graph. This could allow scalability to extremely large trees. In this option, the map is parsed to represent filled and unfilled leaves. As filled leaves are vastly outnumbered by unfilled leaves, this produces *sparse* Merkle trees.  This low-definition data model provides a light and efficient mechanism to append or revoke claims and to audit a graph, which contributes to the target credential being higher-definition. (The trade-off is that we get an  unordered map with loss of information, for instance about the relationships between claims).
  
 ## Digital Identity Applications 
 To build identity applications that use stateful identity maps, the data services layer could be  implemented with software agents that manage functions such as:
